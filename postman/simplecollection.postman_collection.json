@@ -10,10 +10,15 @@
       "name": "Create User",
       "request": {
         "method": "POST",
-        "header": [],
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
         "body": {
           "mode": "raw",
-          "raw": "{ \"email\": \"hans@eaaadk\",\r\n \"name\":  \"hans\" }",
+          "raw": "{ \"email\": \"hans@eaaadk\", \"name\": \"hans\" }",
           "options": {
             "raw": {
               "language": "json"
@@ -22,71 +27,25 @@
         },
         "url": {
           "raw": "{{userURL}}/api/Users",
-          "host": [
-            "{{userURL}}"
-          ],
-          "path": [
-            "api",
-            "Users"
-          ]
+          "host": ["{{userURL}}"],
+          "path": ["api", "Users"]
         }
       },
       "response": []
     },
     {
-      "name": "get User",
+      "name": "Get User",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{userURL}}{/api/Users/1",
-          "host": [
-            "{{userURL}}{"
-          ],
-          "path": [
-            "api",
-            "Users",
-            "1"
-          ]
+          "raw": "{{userURL}}/api/Users/1",
+          "host": ["{{userURL}}"],
+          "path": ["api", "Users", "1"]
         }
       },
       "response": []
     }
   ]
 }
-"info": {
-"_postman_id": "60143b55-5cdc-4a2f-acb4-a38486ea7768",
-"name": "simplecollection",
-"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-"_exporter_id": "9578175"
-},
-"item": [
-{
-"name": "Create User",
-"request": {
-"method": "POST",
-"header": [
-{
-"key": "Content-Type",
-"value": "application/json"
-}
-],
-"url": "http://localhost:5064/api/Users",
-"body": {
-"mode": "raw",
-"raw": "{ \"name\": \"John Doe\" }"
-}
-},
-"response": []
-},
-{
-"name": "Get User",
-"request": {
-"method": "GET",
-"header": [],
-"url": "http://localhost:5064/api/Users/1"
-},
-"response": []
-}
-]
 
